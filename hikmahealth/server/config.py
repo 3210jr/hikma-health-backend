@@ -31,7 +31,7 @@ class EnvironmentType:
     Docker = "dev_docker"
 
 # for PostgreSQL connection
-DATABASE_URL=os.environ.get("DATABASE_URL", None)
+DATABASE_URL=os.environ.get("AZURE_POSTGRESQL_CONNECTIONSTRING", None)
 if DATABASE_URL:
     # IF there is a connection string, proceed to extract the data from it
     db_proto, connection_params = DATABASE_URL.split("//");
